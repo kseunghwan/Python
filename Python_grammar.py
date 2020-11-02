@@ -15,3 +15,6 @@ print(days)
 days.append("Sat")
 days.reverse()
 print(days)
+
+for a in 43:
+   pirnt(a)
