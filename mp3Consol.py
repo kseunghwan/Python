@@ -1,3 +1,7 @@
+import puls
+
+if __name__ == "__main__":
+  
   setting = puls.MusigBox()
 
   while(1):
