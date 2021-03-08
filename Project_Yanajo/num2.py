@@ -1,0 +1,174 @@
+# 랜덤
+
+from random import *
+
+print(int(random()))
+print(int(random()))
+print(int(random()))
+
+print(int(random()*10))
+print(int(random()*10))
+print(int(random()*10))
+
+print(int(random()*10)+1)
+print(int(random()*10)+1)
+print(int(random()*10)+1)
+
+print(int(random()*45)+1)
+print(int(random()*45)+1)
+print(int(random()*45)+1)
+
+print(randrange(1,46)) #1~46 미만의 랜덤
+
+print(randint(1, 45)) # 1~45 이하의 랜덤
+
+# 당신은 최근에 코딩 스터디 모임을 새로 만들었다.
+# 월 4회 스터디를 하는데 3번은 온라인으로 하고 1번은 오프라인으로 하기로 했다.
+# 아래 조건에 맞는 오프라인 모임 날짜를 정해주는 프로그램을 작성해라
+
+# 조건1 : 랜덤으로 날짜를 뽑아야 한다.
+# 조건2 : 월별 날짜는 다름을 감안하여 최소 일수인 28 이내로 정해야 한다.
+# 조건3 : 매월 1~3일은 스터디 준비를 해야 하므로 제외한다.
+
+# (출력문 예제)
+# 오프라인 스터디 모임 날짜는 매월 x 일로 선정되었습니다.
+
+date = randint(4, 28)
+print("오프라인 스터디 모임 날짜는 매월 " + str(date) +"일로 선정되었습니다." )
+
+# 슬라이싱
+jumin = "12345679-987654321"
+
+print("꺼내오기 :" + jumin[10])
+print("가져오기 :" + jumin[0:4]) # 0 부터 4 미만까지
+print("뒤에서 부터 :" + jumin[-7:]) # 맨 뒤에 7번쨰부터 끝까지
+
+python = "Hello Word"
+print(python.lower())
+print(python.upper())
+print(python.isupper())
+print(len(python))
+print(python.replace("Python", "Java"))
+
+index = python.index("o")
+print(index)
+
+print(python.find("java"))
+print(python.index("java"))
+print("hi")
+
+print(python.count("n"))
+
+#문자열 포맷
+
+print("a" + "b")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 방법1
+print("나는 %d살입니다." % 20)
+print("나는 %s을 좋아해요." % "파이썬")
+print("Apple 은 %c로 시작해요." %"A")
+print("나는 %s살입니다." % 20)
+print("나는 %s색과 %s색을 좋아해요." % ("파란","빨간"))
+
+# 방법2
+print("나는 {}살입니다.".format(20))
+print("나는 {}색과 {}색을 좋아해요.".format("파란", "빨간"))
+print("나는 {1}색과 {0}색을 좋아해요.".format("파란", "빨간"))
+
+# 방법3
+print("나는 {age}살이며, {color}색을 좋아해요".format(age = 20, color = "빨강"))
+
+# 방법4
+age = 20
+color = "빨간"
+print(f"나는 {age}살이며, {color}색을 좋아해요")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+url = "http://naver.com"
+my_str = url.replace("http://","") #규칙 1
+my_str = my_str[:my_str.index(".")] # mystr 변수 내에서 문자열에서 처음 나오는.에 위치 직전까지 없앤다.
+password = my_str[:3] + str(len(my_str)) + str(my_str.count("e")) + "!"
+print("{0} 의 비밀번호는 {1} 입니다.".format(url, password))
+
+# 리스트 []
+
+# 지하철 칸별로 10명, 20명, 30명
+subway1 = 10
+subway2 = 20
+subway3 = 30
+
+subway = [10, 20, 30]
+print(subway)
+
+subway = ["유재석", "조세호", "박명수"]
+print(subway)
+
+# 조세호씨가 몇 번째 칸에 타고 있는가?
+print(subway.index("조세호"))
+
+# 하하씨가 다음 정류장에서 승차함
+subway.append("하하")
+print(subway)
+
+# 정형돈씨가 유재석 / 조세호씨 사이에 승차함
+subway.insert(1, "정형돈")
+print(subway)
+
+# 지하철에 있는 사람을 뒤에서 한 명씩 하차 함
+print(subway.pop())
+print(subway)
+
+print(subway.pop())
+print(subway)
+
+print(subway.pop())
+print(subway)
+
+# 같은 이름의 사람이 몇 명 있는지 확인
+subway.append("유재석")
+print(subway)
+print(subway.count("유재석"))
+
+# 정렬도 가능
+num_list = [7,8,9,1,2]
+num_list.sort()
+print(num_list)
+
+
+
