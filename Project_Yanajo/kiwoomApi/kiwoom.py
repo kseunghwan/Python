@@ -1,5 +1,6 @@
 from PyQt5.QAxContainer import *
 from PyQt5.QtCore import *
+from method.errorCode import errors
 # QaxWidget 파이썬 파일중 컨테이너부분을 직접적으로 접근할수 있는 API로 서비스.서비스임플.맵퍼.DB (구현부안에 상속된건 아님) 추정됨
 class Kiwoom(QAxWidget):
 
@@ -22,11 +23,19 @@ class Kiwoom(QAxWidget):
         self.login_exec = None
         ######################
 
+        ############변수모음###
+        self.account_BankNum = None
+        #####################
+
         self.get_Ocx_Install()
 
         self.event_List()
 
         self.signal_login_CommConnect()
+
+        self.login_slot()
+
+        self.get_account_info()
 
     def get_Ocx_Install(self):
 
@@ -60,3 +69,19 @@ class Kiwoom(QAxWidget):
         self.login_exec = QEventLoop() # QtCore 이벤트 루프 초기화
 
         self.login_exec.exec_() # 이벤트 루프 지정
+
+    # 키움 에러처리 key
+    def login_slot(self, errCode):
+        print(errors(errCode))
+
+        self.login_exec.exec_()
+
+    # 로그인 버전처리 (계좌번호가져오기)
+    def get_account_info(self):
+        account_list = self.dynamicCall("GetLoginInfo(String)", "ACCNO")
+        account_list = self.dynamicCall("GetLoginInfo(String)", "USER_ID")
+
+        # split : 문자열 자르기 (계좌번호 가져올때 18545454545;45447878785; 이런식으로 출력됨)
+        account_BankNum = account_list.split(';')
+
+        print('현재 계좌 번호 %s', account_BankNum)
