@@ -1,5 +1,6 @@
 def errors(err_code):
 
+    # 키움API 반응형문구 정리
    err_dic = {0: ('OP_ERR_NONE', '정상처리'),
               -10: ('OP_ERR_FAIL', '실패'),
               -100: ('OP_ERR_LOOIN', '사용자정보교환실패'),
